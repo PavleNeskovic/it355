@@ -11,10 +11,13 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Created</th>
-            <th>Last Modified</th>
+            <th>Full Name</th>
+            <th>Telephone</th>
+            <th>Date</th>
+            <th>Cause</th>
+            <th>Emergency</th>
+            <th>Contact</th>
+            <th>Actions</th>
         </tr>
         </thead>
 
@@ -25,17 +28,29 @@
                         ${appointment.name}
                 </td>
                 <td>
-                        ${appointment.description}
+                        ${appointment.telephone}
                 </td>
                 <td>
-                    <button class="btn"
-                            onclick="location.href='/appointment/${appointment.id}/update'">Update
-                    </button>
+                        ${appointment.date}
                 </td>
                 <td>
-                    <button class="btn btn-danger"
-                            onclick="location.href='/appointment/${appointment.id}/delete'">Delete
-                    </button>
+                        ${appointment.cause}
+                </td>
+                <td>
+                        ${appointment.emergency}
+                </td>
+                <td>
+                        ${appointment.delivery}
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <button class="btn"
+                                onclick="location.href='/appointment/${appointment.id}/update'">Update
+                        </button>
+                        <button class="btn btn-danger"
+                                onclick="location.href='/appointment/${appointment.id}/delete'">Delete
+                        </button>
+                    </div>
                 </td>
             </tr>
         </c:forEach>

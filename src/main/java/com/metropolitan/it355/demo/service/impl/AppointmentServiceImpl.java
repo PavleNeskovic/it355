@@ -44,7 +44,11 @@ public class AppointmentServiceImpl implements AppointmentService {
     public Appointment update(Appointment newAppointment) {
         Appointment oldAppointment = appointmentRepository.findById(newAppointment.getId()).get();
         oldAppointment.setName(newAppointment.getName());
-        oldAppointment.setDescription(newAppointment.getDescription());
+        oldAppointment.setCause(newAppointment.getCause());
+        oldAppointment.setDate(newAppointment.getDate());
+        oldAppointment.setDelivery(newAppointment.getDelivery());
+        oldAppointment.setEmergency(newAppointment.getEmergency());
+        oldAppointment.setTelephone(newAppointment.getTelephone());
         appointmentRepository.save(oldAppointment);
         return newAppointment;
     }

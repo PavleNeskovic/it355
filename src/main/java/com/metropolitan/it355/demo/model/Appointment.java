@@ -12,11 +12,28 @@ public class Appointment {
     @GeneratedValue
     private Long id;
     private String name;
-    private String description;
+    private String telephone;
+    private String date;
+    private String cause;
+    private String emergency;
+    private String delivery;
 
     public Appointment(AppointmentDto appointmentDto) {
         this.name = appointmentDto.getName();
-        this.description = appointmentDto.getDescription();
+        this.telephone = appointmentDto.getTelephone();
+        this.date = appointmentDto.getDate();
+        this.cause = appointmentDto.getCause();
+        this.emergency = appointmentDto.getEmergency();
+        this.delivery = appointmentDto.getDelivery();
+    }
+
+    public Appointment(String name, String telephone, String date, String cause, String emergency, String delivery) {
+        this.name = name;
+        this.telephone = telephone;
+        this.date = date;
+        this.cause = cause;
+        this.emergency = emergency;
+        this.delivery = delivery;
     }
 
     public Appointment() {
@@ -38,11 +55,43 @@ public class Appointment {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getCause() {
+        return cause;
+    }
+
+    public void setCause(String cause) {
+        this.cause = cause;
+    }
+
+    public String getEmergency() {
+        return emergency;
+    }
+
+    public void setEmergency(String emergency) {
+        this.emergency = emergency;
+    }
+
+    public String getDelivery() {
+        return delivery;
+    }
+
+    public void setDelivery(String delivery) {
+        this.delivery = delivery;
     }
 }
